@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +12,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #23272f;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0;
+  padding: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: white;
 }
 
 a {
@@ -20,17 +46,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -63,4 +78,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
