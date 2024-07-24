@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Counter from './components/Counter';
+import CounterJeitoAtualizado from './components/CounterJeitoAtualizado';
 import './App.css'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div>
       {/* LISTAS EM UM COMPONENTE */}
       <Header name="ProgBR" links={["Sobre", "Comprar", "Contato", "Login"]} />
-      <Counter />
+      <CounterJeitoAtualizado/>
     </div>
   )
 }
