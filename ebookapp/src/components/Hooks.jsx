@@ -16,18 +16,27 @@ function Hooks() {
 
   useEffect(() => {
     async function carregaRepositorios() {
-        const resposta = await fetch(
-            'https://api.github.com/users/emanueldjn/repos'
-        );
-        const respositorios = await resposta.json()
+      try {
+        const resposta = await fetch("https://api.github.com/users/emanueldjn/repos");
+        if (resposta.ok) {
+          const repositorios = await resposta.json();
+          setRepositorio(repositorios);
+        } else {
+          throw new Error('Erro ao carregar repositórios');
+        }
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+      }
     }
-    carregaRepositorios();
-  }, []);
-  
+
+    carregaRepositorios(); // Chama a função para buscar os repositórios
+  }, []); // Adiciona um array vazio para que o useEffect seja executado apenas uma vez, após a montagem inicial
   
 
   return (
     <div>
+
+      <h1>retorno da funcao {repositorio}!!</h1>
         {/* useState */}
       <h1>Minha cor favorita é {color}</h1>
       <button className='btn btn-secondary' onClick={() => setColor('Azul')}>  {/* Atualiza o estado 'color' para 'Azul' ao clicar no botão */}
